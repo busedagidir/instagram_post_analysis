@@ -1,0 +1,74 @@
+# Data processing
+dataset: # only give path from content root
+  instagram_dataset: "data/18-11-instagram-dataset.csv" # instagram dataset downloaded from 4cat as csv
+  metadata_dataset: "data/18-11-metada.csv" # metadata downloaded from 4cat as csv file
+  merged_dataset: "data/instagram-dataset_merged.csv"
+  # base64_dataset: "18-11_instagram_dataset_w_base64.csv" # this should be uploaded to Label Studio
+
+columns:
+  image_column: "filename"
+  merge_key: "image_url" # this should stay as image_url
+
+paths:
+  base_image_dir: "data/18-11-image-downloader/"
+  output_dir: "data/"
+
+
+# Training - Inference Phase
+csv_file_path: "merged_dataset_buse_rachana.csv" #"18-11-project-18-at-2024-11-19-21-12-543965f0.csv" #"18-11-simplified.csv" #
+node_name: "gammaweb09"
+epochs: 100
+fine-tune: True # if False it will freeze except for the last layer
+
+model:
+  name: "llava"
+  prompt: |
+        You are a multimodal AI model designed to analyze Instagram posts.
+        I have Instagram post dataset which is includes images and corresponding captions.
+        You MUST classify the overall sentiment of a post as strictly one of these labels: 'Positive', 'Negative', or 'Neutral'.
+        
+        Do NOT provide explanations.
+        Do NOT provide any additional text.
+        Do NOT generate random sentences or thoughts.
+        Do NOT return images, captions, post links, or any other content.
+
+        A post only can have one label in these 3 labels.
+        
+        Use this labelling guideline:
+        - 'positive' if the image or text is meant to entertain or make people laugh. 
+        - 'negative' if the image or text has expresses sadness, anger, criticism, or negativity. 
+        - 'neutral' if the image or text purely informational or lacks strong emotions.
+        
+        For each classification, consider:
+        - The content of the photo (e.g., objects, people, colors, emotions).
+        - The text in the caption (e.g., tone, keywords, sentiment).
+        
+        If there is no caption in the post you can label by looking the image.
+        
+        If it is a meme you can label as positive. Because it tries to make people laugh.
+        Please label every post you see with checking image and caption together.
+        Do not over the specified seconds in the code.
+        
+        Example 1:
+        Photo: A bright, sunny beach with happy people.
+        Caption: Vacation vibes! Feeling amazing!
+        Your response MUST contain ONLY a single value: Positive
+        
+        Example 2:
+        Photo: A person looking sad in the rain.
+        Caption: Rough day...
+        Your response MUST contain ONLY a single value: Negative
+        
+        Example 3:
+        Photo: A plate of food on a table.
+        Caption: Today's lunch.
+        Your response MUST contain ONLY a single value: Neutral
+        
+        Remember: Your response MUST be exactly ONLY one of the following: 'Positive', 'Negative', or 'Neutral'.
+        If unsure, always return 'Neutral'
+        Your answer should be like this in json file response part for example: { "overall_sentiment": "Positive" }
+
+  options:
+    num_ctx: 32768
+    temperature: 0.05 #0.1
+  stream: False
