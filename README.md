@@ -38,9 +38,9 @@ Data collection: 4Cat, Instagram
 
 ![](images/4cat.png)
 
-![](images/Screenshot 2025-06-14 at 17.48.16.png)
+![](images/instagram1.png)
 
-![](images/Screenshot 2025-06-14 at 17.48.36.png)
+![](images/instagram2.png)
 
 
 Image model: ResNet50
