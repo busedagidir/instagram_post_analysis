@@ -32,7 +32,16 @@ Challenges faced:
 - Language mismatch due to non-English captions (translation issues).
 
 Final dataset: Combined English-only captions from both sets.
+
 ## 🛠️ Technologies & Tools
+Data collection: 4Cat, Instagram
+
+![](images/4cat.png)
+
+![](images/Screenshot 2025-06-14 at 17.48.16.png)
+
+![](images/Screenshot 2025-06-14 at 17.48.36.png)
+
 
 Image model: ResNet50
 
