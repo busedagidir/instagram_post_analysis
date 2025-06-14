@@ -34,27 +34,30 @@ Challenges faced:
 Final dataset: Combined English-only captions from both sets.
 
 ## 🛠️ Technologies & Tools
-Data collection: 4Cat, Instagram
+**Data collection:** 4Cat, Instagram
 
 ![](images/4cat.png)
 **Figure 1.** Data collection tool
 
 ![](images/instagram1.png)
-**Figure 1.** Instagram accounts to collect data
+
+**Figure 2.** Instagram accounts to collect data
 
 ![](images/instagram2.png)
-**Figure 1.** Instagram post hashtags to collect data
+
+**Figure 3.** Instagram post hashtags to collect data
 
 
-Image model: ResNet50
+**Image model:** ResNet50
 
-Text model: BERT
+**Text model:** BERT
 
-Multimodal model: Combined ResNet50 + BERT pipeline
+**Multimodal model:** Combined ResNet50 + BERT pipeline
 
-Prompt-based model: LLaVA (Large Language and Vision Assistant)
+**Prompt-based model:** LLaVA (Large Language and Vision Assistant)
 
-Frameworks: PyTorch, HuggingFace, CLIP
+**Frameworks:** PyTorch, HuggingFace, CLIP
+
 ## 🔍 Methodology
 
 ### Approaches:
