@@ -37,10 +37,13 @@ Final dataset: Combined English-only captions from both sets.
 Data collection: 4Cat, Instagram
 
 ![](images/4cat.png)
+**Figure 1.** Data collection tool
 
 ![](images/instagram1.png)
+**Figure 1.** Instagram accounts to collect data
 
 ![](images/instagram2.png)
+**Figure 1.** Instagram post hashtags to collect data
 
 
 Image model: ResNet50
